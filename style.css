@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
@@ -6,11 +6,10 @@ body {
     padding: 0;
 }
 
-/* Header */
 header {
     background: #333;
     color: white;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
 
@@ -24,7 +23,6 @@ header p {
     font-size: 16px;
 }
 
-/* Main Layout */
 main {
     display: flex;
     justify-content: space-between;
@@ -47,44 +45,38 @@ h2 {
     font-size: 20px;
 }
 
-/* Movie List Styling */
-/* Ensure list items are styled as buttons */
 #films {
     padding: 0;
     list-style: none;
 }
 
 #films li {
-    display: block; /* Ensure block-level elements */
+    display: block; 
     padding: 12px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    border: 0.5px solid #444; /* Add border */
-    border-radius: 1px; /* Rounded corners */
+    border: 0.5px solid #444; 
+    border-radius: 1px; 
     margin-bottom: 8px;
     text-align: center;
     background: white;
     transition: background 0.3s, transform 0.2s, border-color 0.3s;
 }
 
-/* Hover Effect */
 #films li:hover {
-    background: #ffeb99; /* Light yellow */
-    border-color: #ff8c00; /* Change border color */
+    background: #ffeb99;
+    border-color: #ff8c00; 
     transform: scale(1.05);
     color: #333;
 }
 
-/* Active Effect (When Clicked) */
 #films li:active {
-    background: #ffcc33; /* Darker yellow */
-    border-color: #ff6600; /* Darker border */
+    background: #ffcc33; 
+    border-color: #ff6600; 
     transform: scale(0.95);
 }
 
-
-/* Movie Details */
 #movie-details {
     width: 60%;
     background: white;
