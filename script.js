@@ -19,7 +19,9 @@ function fetchMovies() {
         .then(movies => {
             moviesList.innerHTML = ""; // Clear existing movies
             movies.forEach(movie => addMovieToList(movie));
-            displayMovieDetails(movies[0]); // Show first movie by default
+            if (movies.length > 0) {
+                displayMovieDetails(movies[0]); // Show first movie by default
+            }
         })
         .catch(error => console.error("Error fetching movies:", error));
 }
@@ -28,7 +30,7 @@ function fetchMovies() {
 function addMovieToList(movie) {
     const li = document.createElement("li");
     li.textContent = movie.title;
-    li.classList.add("film", "item");
+    li.classList.add("film");
 
     // Add "sold-out" class if no tickets are available
     if (movie.capacity - movie.tickets_sold <= 0) {
@@ -44,22 +46,17 @@ function addMovieToList(movie) {
 function displayMovieDetails(movie) {
     moviePoster.src = movie.poster;
     movieTitle.textContent = movie.title;
-    movieRuntime.textContent = `Runtime: ${movie.runtime} mins`;
-    movieShowtime.textContent = `Showtime: ${movie.showtime}`;
+    movieRuntime.textContent = movie.runtime;
+    movieShowtime.textContent = movie.showtime;
     movieDescription.textContent = movie.description;
     
     // Calculate available tickets
     const availableTickets = movie.capacity - movie.tickets_sold;
-    movieTickets.textContent = `Available Tickets: ${availableTickets}`;
+    movieTickets.textContent = availableTickets;
 
     // Disable "Buy Ticket" button if sold out
-    if (availableTickets <= 0) {
-        buyTicketBtn.textContent = "Sold Out";
-        buyTicketBtn.disabled = true;
-    } else {
-        buyTicketBtn.textContent = "Buy Ticket";
-        buyTicketBtn.disabled = false;
-    }
+    buyTicketBtn.disabled = availableTickets <= 0;
+    buyTicketBtn.textContent = availableTickets <= 0 ? "Sold Out" : "Buy Ticket";
 
     // Update Buy Ticket button event
     buyTicketBtn.onclick = () => buyTicket(movie);
@@ -92,7 +89,7 @@ function updateMovie(movie) {
 function deleteMovie(movieId) {
     fetch(`${BASE_URL}/${movieId}`, { method: "DELETE" })
         .then(() => {
-            document.getElementById("films").innerHTML = ""; // Clear list
+            document.querySelector(`#films li:contains("${movieId}")`)?.remove();
             fetchMovies(); // Refresh movie list
         })
         .catch(error => console.error("Error deleting movie:", error));
@@ -104,9 +101,9 @@ document.getElementById("add-movie-form").addEventListener("submit", function(ev
 
     const newMovie = {
         title: document.getElementById("new-title").value,
-        runtime: document.getElementById("new-runtime").value,
+        runtime: parseInt(document.getElementById("new-runtime").value, 10),
         showtime: document.getElementById("new-showtime").value,
-        capacity: document.getElementById("new-capacity").value,
+        capacity: parseInt(document.getElementById("new-capacity").value, 10),
         description: document.getElementById("new-description").value,
         poster: document.getElementById("new-poster").value,
         tickets_sold: 0

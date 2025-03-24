@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
@@ -10,8 +10,18 @@ body {
 header {
     background: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
 }
 
 /* Main Layout */
@@ -19,113 +29,137 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 10px;
+    margin: 20px;
 }
 
 /* Sidebar (Movies List) */
 aside {
     width: 25%;
     background: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     text-align: center;
     color: #333;
-    font-size: 16px;
+    font-size: 20px;
 }
 
-ul {
-    list-style: none;
+/* Movie List Styling */
+/* Ensure list items are styled as buttons */
+#films {
     padding: 0;
+    list-style: none;
 }
 
-.film-item {
-    padding: 8px;
+#films li {
+    display: block; /* Ensure block-level elements */
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0.5px solid #444; /* Add border */
+    border-radius: 1px; /* Rounded corners */
+    margin-bottom: 8px;
+    text-align: center;
+    background: white;
+    transition: background 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+/* Hover Effect */
+#films li:hover {
+    background: #ffeb99; /* Light yellow */
+    border-color: #ff8c00; /* Change border color */
+    transform: scale(1.05);
+    color: #333;
+}
+
+/* Active Effect (When Clicked) */
+#films li:active {
+    background: #ffcc33; /* Darker yellow */
+    border-color: #ff6600; /* Darker border */
+    transform: scale(0.95);
+}
+
+
+/* Movie Details */
+#movie-details {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#movie-details img {
+    width: 250px;
+    height: auto;
+    border-radius: 4px;
+}
+
+#movie-details div {
+    flex-grow: 1;
+}
+
+#movie-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#movie-details p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
     font-size: 14px;
     cursor: pointer;
-    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+    border: none;
     transition: background 0.3s;
 }
 
-.film-item:hover {
-    background: #eee;
-}
-
-/* Movie Details */
-section {
-    width: 50%;
-    background: white;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 4px;
-    display: block;
-    margin: 0 auto;
-}
-
+/* Buy Ticket Button */
 #buy-ticket {
     background: #ff8c00;
     color: white;
-    border: none;
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
 }
 
 #buy-ticket:hover {
     background: #e67e22;
 }
 
-/* DELETE BUTTON */
+/* Delete Movie Button */
 .delete-btn {
     background: #ff4444;
     color: white;
-    border: none;
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 5px;
-    transition: background 0.3s;
 }
 
 .delete-btn:hover {
     background: #d63031;
 }
 
-/* ADD MOVIE FORM */
+/* Add Movie Form */
 #add-movie-container {
-    width: 70%;
+    width: 80%;
     margin: 20px auto;
     background: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-#add-movie-container h3 {
-    text-align: center;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Form Layout */
 #add-movie-form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .form-group {
@@ -135,18 +169,17 @@ img {
 
 label {
     font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 3px;
+    font-size: 14px;
+    margin-bottom: 5px;
     color: #333;
 }
 
-/* Input and Textarea Styling */
 input, textarea {
-    width: 70%;
-    padding: 6px;
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 14px;
     transition: border-color 0.3s;
 }
 
@@ -159,15 +192,22 @@ input:focus, textarea:focus {
 .submit-btn {
     background: #28a745;
     color: white;
-    border: none;
-    padding: 8px;
     font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
-    width: 30%;
 }
 
 .submit-btn:hover {
     background: #218838;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside, #movie-details {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
