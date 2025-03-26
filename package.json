@@ -1,0 +1,28 @@
+"scripts": {
+  "start": "json-server --watch db.json --port 3000"
+}
+
+
+{
+  "name": "week-3-code-challenge",
+  "version": "1.0.0",
+  "description": "Maua_tech is a simple movie ticket booking application that allows users to browse movies, view details, buy tickets, and even add or delete movies.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaacDev14/Week-3-Code-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaacDev14/Week-3-Code-Challenge/issues"
+  },
+  "homepage": "https://github.com/IsaacDev14/Week-3-Code-Challenge#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
