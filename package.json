@@ -2,10 +2,38 @@
   "name": "week-3-code-challenge",
   "version": "1.0.0",
   "description": "Maua_tech is a simple movie ticket booking application that allows users to browse movies, view details, buy tickets, and even add or delete movies.",
-  "main": "script.js",
+  "main": "server.js",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
+    "colorette": "^2.0.20",
+    "dayjs": "^1.11.13",
+    "dot-prop": "^9.0.0",
+    "es-escape-html": "^0.1.1",
+    "eta": "^3.5.0",
+    "header-range-parser": "^1.1.3",
+    "http-status-emojis": "^2.2.0",
+    "inflection": "^3.0.2",
+    "ipaddr.js": "^2.2.0",
+    "json-server": "^1.0.0-beta.3",
+    "json5": "^2.2.3",
+    "lowdb": "^7.0.1",
+    "milliparsec": "^4.0.0",
+    "mime": "^4.0.4",
+    "mrmime": "^2.0.1",
+    "negotiator": "^0.6.4",
+    "readdirp": "^4.1.2",
+    "regexparam": "^2.0.2",
+    "sirv": "^2.0.4",
+    "sort-on": "^6.1.0",
+    "steno": "^4.0.2",
+    "totalist": "^3.0.1",
+    "type-fest": "^4.38.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "json-server --watch db.json --port 3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "json-server --watch db.json --port 3000"
   },
   "repository": {
     "type": "git",
@@ -17,8 +45,5 @@
   "bugs": {
     "url": "https://github.com/IsaacDev14/Week-3-Code-Challenge/issues"
   },
-  "homepage": "https://github.com/IsaacDev14/Week-3-Code-Challenge#readme",
-  "dependencies": {
-    "json-server": "^1.0.0-beta.3"
-  }
+  "homepage": "https://github.com/IsaacDev14/Week-3-Code-Challenge#readme"
 }
