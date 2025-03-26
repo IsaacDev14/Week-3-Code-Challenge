@@ -32,8 +32,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server.js",
-    "server": "json-server --watch db.json --port 3000"
+    "start": "json-server --watch db.json --port 3000"
   },
   "repository": {
     "type": "git",
