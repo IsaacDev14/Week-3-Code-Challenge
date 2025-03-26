@@ -1,14 +1,10 @@
-"scripts": {
-  "start": "json-server --watch db.json --port 3000"
-}
-
-
 {
   "name": "week-3-code-challenge",
   "version": "1.0.0",
   "description": "Maua_tech is a simple movie ticket booking application that allows users to browse movies, view details, buy tickets, and even add or delete movies.",
   "main": "script.js",
   "scripts": {
+    "start": "json-server --watch db.json --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
