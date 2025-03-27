@@ -1,5 +1,6 @@
 // Base URL for the JSON server
 const BASE_URL = "https://week-3-code-challenge-ylnz.onrender.com/films";
+// const BASE_URL = "http://localhost:3000/films";
 
 // DOM elements
 const moviePoster = document.getElementById("poster");
