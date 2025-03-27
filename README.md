@@ -70,8 +70,8 @@ Flatdango/
 
 ![alt text](data/image.png)
 
-### Movie Details
-![Movie Details](https://via.placeholder.com/800x400?text=Movie+Details)
+### Add New Movie 
+data/image copy.png
 
 ## Future Improvements
 - Implement user authentication for personalized ticket booking.
