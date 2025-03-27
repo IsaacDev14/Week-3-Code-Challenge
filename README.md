@@ -68,7 +68,7 @@ Flatdango/
 ### Homepage
 
 
-![Flatdango UI](https://via.placeholder.com/800x400?text=Flatdango+Homepage)
+![alt text](data/image.png)
 
 ### Movie Details
 ![Movie Details](https://via.placeholder.com/800x400?text=Movie+Details)
