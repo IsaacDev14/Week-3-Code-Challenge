@@ -71,7 +71,7 @@ Flatdango/
 ![alt text](data/image.png)
 
 ### Add New Movie 
-data/image copy.png
+![alt text](<data/image copy.png>)
 
 ## Future Improvements
 - Implement user authentication for personalized ticket booking.
