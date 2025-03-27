@@ -1,6 +1,6 @@
 // Base URL for the JSON server
-const BASE_URL = "https://github.com/IsaacDev14/Week-3-Code-Challenge/blob/main/db.json";
-// const BASE_URL = "http://localhost:3000/films";
+const BASE_URL = "https://raw.githubusercontent.com/IsaacDev14/Week-3-Code-Challenge/main/db.json";
+
 
 // DOM elements
 const moviePoster = document.getElementById("poster");
